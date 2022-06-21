@@ -2,7 +2,7 @@ import bank
 import client
 bank_account=bank.Bank("ING")
 amounts={}
-       
+        
 def add(): 
         print("To create an account, please fill in the information below.")
         name=input("Name:")
@@ -32,8 +32,8 @@ Welcome {}!'''.format(name))
     2. Deposit
     3. Balance
     4. Exit''')
-               choose1=int(input("your choose:"))
-               if choose1==1:
+               choice1=int(input("your choose:"))
+               if choice1==1:
                     amount=int(input("witdraw amount:"))
                     new_balance=new_account.withdraw(amount)
                     if new_balance<0:
@@ -42,15 +42,15 @@ Welcome {}!'''.format(name))
                         print('''The sum of {} has been withdrawn from your account balance.
 
 Your current account balance is: {}'''.format(amount,new_balance))
-               elif choose1==2:
+               elif choice1==2:
                    amount=int(input("Deposit amount:"))
                    new_balance=new_account.deposit(amount)
                    print('''The sum of {} has been added to your account balance.
 
 Your current account balance is: {}'''.format(amount,new_balance))
-               elif choose1==3:
+               elif choice1==3:
                    print("Your current account balance is: {}".format(new_account.balance()))
-               elif choose1==4:
+               elif choice1==4:
                    break
         
 while (True):
@@ -62,12 +62,12 @@ Choose an option:
     1. Open new bank account
     2. Open existing bank account
     3. Exit'''.format(bank_account.name))
-    choose=int(input("your choose:"))
-    if choose==1:
+    choice=int(input("your choice:"))
+    if choice==1:
        add()
-    elif choose==2:
+    elif choice==2:
        control()
                
-    elif choose==3:
+    elif choice==3:
         break
                     
